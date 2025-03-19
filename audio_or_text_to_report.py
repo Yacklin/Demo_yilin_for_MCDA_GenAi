@@ -44,7 +44,7 @@ def preprocess_text(text):
             comments = sentences[-1].strip('.,') + '.'
             findings = ' '.join(sentences[:-1]).rstrip('.,') + '.'
         else:
-            findings = text.rstrip('.,') + '.'
+            findings = text.strip('.,') + '.'
             comments = "No additional comments provided."
     return findings, comments
 # PDF Generation function
