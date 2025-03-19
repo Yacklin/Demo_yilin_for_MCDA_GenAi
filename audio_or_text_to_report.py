@@ -35,13 +35,13 @@ def preprocess_text(text):
         if not findings.endswith('.'):
             findings += '.'
         if comments:
-            comments = comments.rstrip('.,') + '.'
+            comments = comments.strip('.,') + '.'
         else:
             comments = "No additional comments provided."
     else:
         sentences = re.split(r'(?<=[a-zA-Z0-9])\s(?=[A-Z])', text)
         if len(sentences) > 1:
-            comments = sentences[-1].rstrip('.,') + '.'
+            comments = sentences[-1].strip('.,') + '.'
             findings = ' '.join(sentences[:-1]).rstrip('.,') + '.'
         else:
             findings = text.rstrip('.,') + '.'
